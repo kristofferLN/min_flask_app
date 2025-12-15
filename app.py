@@ -6,8 +6,8 @@ app = Flask(__name__)
 @app.route("/")
 
 def home():
-    nu = datetime.now()
-    return render_template("index.html", tidstekst=nu)
+    nu = datetime.now().strftime("%H:%M:%S")
+    return render_template("index.html", klokkeslaet=nu)
 
 if __name__ == "__main__":
     app.run(debug=True)
